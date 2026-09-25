@@ -1,0 +1,8 @@
+{
+  "name": "SuomiGRC - Enterprise Governance, Risk & Compliance",
+  "description": "Next-generation GRC automation platform uniting continuous controls monitoring, multi-cloud automated evidence collection, cross-framework mapping, third-party vendor risk, and live Trust Center.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

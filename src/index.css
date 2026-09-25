@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Obsidian Tactical & Nordic Security Palette */
+    --obsidian-bg: #070B14;
+    --obsidian-card: #0D1322;
+    --obsidian-surface: #111A2E;
+    --obsidian-border: #1E293B;
+    --obsidian-accent: #0052CC;
+    --obsidian-cyan: #00D2FF;
+    --obsidian-emerald: #10B981;
+    --obsidian-amber: #F59E0B;
+    --obsidian-rose: #F43F5E;
+    
+    --brand-blue: #0052CC;
+    --brand-cyan: #00D2FF;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    letter-spacing: -0.015em;
+    background-color: #070B14;
+    color: #F1F5F9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Universal tabular numerals for data readability */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Executive Card & Glass Styling (Obsidian Dark Default) */
+.executive-card {
+  background: linear-gradient(135deg, rgba(13, 19, 34, 0.95) 0%, rgba(10, 15, 29, 0.98) 100%);
+  border: 1px solid rgba(30, 41, 59, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  color: #F1F5F9;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.executive-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 8px 30px -4px rgba(0, 82, 204, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Obsidian Tactical Glass Card */
+.obsidian-card {
+  background: linear-gradient(135deg, rgba(13, 19, 34, 0.95) 0%, rgba(8, 12, 22, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.obsidian-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(0, 82, 204, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Tactical HUD Grid Overlay */
+.hud-grid-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 82, 204, 0.12) 0%, transparent 70%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 24px 24px, 24px 24px;
+}
+
+/* Light / High-Contrast Auditor Mode Overrides */
+[data-theme="light"],
+.theme-light {
+  color-scheme: light;
+}
+
+[data-theme="light"] body,
+.theme-light body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .executive-card,
+.theme-light .executive-card {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.04) !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .executive-card:hover,
+.theme-light .executive-card:hover {
+  border-color: #94A3B8 !important;
+  box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.12) !important;
+}
+
+[data-theme="light"] .obsidian-card,
+.theme-light .obsidian-card {
+  background: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .obsidian-card:hover,
+.theme-light .obsidian-card:hover {
+  border-color: #0284C7 !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 82, 204, 0.15) !important;
+}
+
+[data-theme="light"] .hud-grid-pattern,
+.theme-light .hud-grid-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 82, 204, 0.05) 0%, transparent 70%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px) !important;
+}
+
+/* Micro Radar Pulse */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.live-radar-dot {
+  animation: radar-pulse 2.2s infinite;
+}
+
+/* Radar Sweep Animation */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-sweep-beam {
+  transform-origin: center center;
+  animation: radar-sweep 4s linear infinite;
+}
+
+/* Glow animations */
+@keyframes cyan-glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(0, 210, 255, 0.8));
+  }
+}
+
+.cyan-glow {
+  animation: cyan-glow-pulse 3s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 15, 29, 0.5);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Dark scrollbar for tactical panels */
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Crisp focus ring with corporate Blue / Cyan */
+*:focus-visible {
+  outline: 2px solid #00D2FF;
+  outline-offset: 2px;
+}
